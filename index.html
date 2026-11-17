@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Habi Febriansyah – Admin Operasional & Logistik</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f5;--surface:#fff;--tx:#1b1a18;--mu:#77726a;--line:#e8e3da;--ac:#9a7b4f;color-scheme:light;
+--serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;--sans:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121110;--surface:#1a1917;--tx:#f1ede6;--mu:#9b958a;--line:#2b2925;--ac:#c9a875;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121110;--surface:#1a1917;--tx:#f1ede6;--mu:#9b958a;--line:#2b2925;--ac:#c9a875;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--tx);font:400 16px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px}
+section{padding:72px 0 0}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ac);font-weight:500;margin-bottom:14px}
+h2{font:500 clamp(30px,6vw,40px)/1.15 var(--serif);margin-bottom:28px;letter-spacing:-.01em}
+
+/* hero */
+.hero{min-height:92svh;display:flex;flex-direction:column;justify-content:center;padding:80px 0 40px}
+.mono{width:64px;height:64px;border-radius:50%;border:1px solid var(--ac);display:grid;place-items:center;font:500 24px var(--serif);color:var(--ac);margin-bottom:32px}
+h1{font:500 clamp(46px,11vw,84px)/1 var(--serif);letter-spacing:-.02em}
+.role{margin-top:16px;font-size:17px;color:var(--mu)}
+.lead{margin-top:22px;max-width:46ch;font-size:18px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+.btn{padding:13px 26px;border-radius:999px;font-size:15px;font-weight:500;border:1px solid var(--tx);transition:background .3s,color .3s}
+.btn.fill{background:var(--tx);color:var(--bg)}
+.btn:hover{background:var(--ac);border-color:var(--ac);color:#fff}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 90%,transparent);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav .wrap{display:flex;gap:24px;overflow-x:auto;scrollbar-width:none;height:50px;align-items:center}
+nav a{font-size:13px;color:var(--mu);white-space:nowrap;transition:color .3s}
+nav a:hover,nav a.on{color:var(--tx)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+@media(min-width:620px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--surface);padding:24px 18px}
+.stat b{display:block;font:500 40px/1 var(--serif);color:var(--ac)}
+.stat span{display:block;margin-top:8px;font-size:13px;color:var(--mu);line-height:1.4}
+
+/* about */
+.about p{font-size:18px}
+.facts{margin-top:28px;display:grid;gap:12px;font-size:15px}
+.facts div{display:flex;gap:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.facts small{width:84px;flex:none;color:var(--mu)}
+
+/* timeline */
+.job{display:grid;gap:6px;padding:28px 0;border-top:1px solid var(--line)}
+.job:last-child{border-bottom:1px solid var(--line)}
+.job .when{font-size:13px;color:var(--ac);letter-spacing:.04em}
+.job h3{font:500 26px/1.2 var(--serif)}
+.job .pos{color:var(--mu);font-size:15px}
+.job details{margin-top:10px}
+summary{cursor:pointer;font-size:14px;font-weight:500;list-style:none;display:inline-flex;gap:8px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--ac);font-size:18px;transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+.sub{margin-top:16px;font-size:14px;font-weight:600}
+.sub span{font-weight:400;color:var(--mu)}
+ul{margin:8px 0 0;padding-left:18px;color:var(--mu);font-size:15px}
+li{margin:4px 0}
+
+/* project */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px}
+.card h3{font:500 26px/1.2 var(--serif);margin-bottom:10px}
+.card p{color:var(--mu)}
+.flow{display:flex;gap:8px;align-items:center;margin-top:20px;font-size:14px;flex-wrap:wrap}
+.flow i{font-style:normal;color:var(--ac)}
+
+/* skills */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{padding:7px 15px;border:1px solid var(--line);border-radius:999px;font-size:14px;background:var(--surface)}
+.grp+.grp{margin-top:24px}
+.grp h4{font-size:13px;color:var(--mu);font-weight:500;margin-bottom:10px}
+
+/* contact */
+.ct a{display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-top:1px solid var(--line);transition:color .3s;word-break:break-word}
+.ct a:last-child{border-bottom:1px solid var(--line)}
+.ct a:hover{color:var(--ac)}
+.ct small{color:var(--mu)}
+footer{padding:64px 0 48px;text-align:center;font-size:13px;color:var(--mu)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="wrap hero" id="home">
+  <div class="mono">HF</div>
+  <h1>Habi<br>Febriansyah</h1>
+  <p class="role">Admin Operasional & Logistik · Pangkalan Kerinci, Riau</p>
+  <p class="lead">Mengubah pekerjaan manual menjadi sistem digital, dari Google Apps Script sampai WMS buatan sendiri.</p>
+  <div class="cta"><a class="btn fill" href="#pengalaman">Lihat pengalaman</a><a class="btn" href="#kontak">Hubungi saya</a></div>
+</header>
+
+<nav id="nav"><div class="wrap">
+  <a href="#capaian">Capaian</a><a href="#tentang">Tentang</a><a href="#pengalaman">Pengalaman</a><a href="#proyek">Proyek</a><a href="#keahlian">Keahlian</a><a href="#kontak">Kontak</a>
+</div></nav>
+
+<main class="wrap">
+<section id="capaian" class="rv">
+  <p class="eyebrow">Capaian</p><h2>Hasil yang terukur</h2>
+  <div class="stats">
+    <div class="stat"><b>95%</b><span>SLA pengiriman, naik dari 85%</span></div>
+    <div class="stat"><b>22+</b><span>Staf dipimpin sebagai Shift Lead</span></div>
+    <div class="stat"><b>183+</b><span>Item inventaris di WMS</span></div>
+    <div class="stat"><b>−20%</b><span>Keterlambatan operasional</span></div>
+  </div>
+</section>
+
+<section id="tentang" class="rv about">
+  <p class="eyebrow">Tentang</p><h2>Dari lantai gudang ke dasbor digital</h2>
+  <p>Admin operasional dan logistik dengan 3+ tahun pengalaman di lingkungan warehouse dan distribusi. Sebagai Shift Lead di Shopee Express, saya memimpin 22+ staf dan menaikkan SLA ketepatan pengiriman dari 85% menjadi 95%. Terakhir di PT Roda Kencana Indonesia, saya membangun Warehouse Management System berbasis web untuk pelacakan stok real-time.</p>
+  <div class="facts">
+    <div><small>Pendidikan</small><span>SMK Negeri 1 Bukittinggi, 2013–2016</span></div>
+    <div><small>Fokus</small><span>Warehouse, inventory, otomasi</span></div>
+  </div>
+</section>
+
+<section id="pengalaman" class="rv">
+  <p class="eyebrow">Pengalaman</p><h2>Perjalanan karier</h2>
+
+  <article class="job">
+    <span class="when">2025 – Sep 2026</span>
+    <h3>PT Roda Kencana Indonesia</h3><span class="pos">Admin Operasional & Inventaris</span>
+    <details><summary>Detail</summary>
+      <ul>
+        <li>Mengelola inventaris 183+ item spare part otomotif (FAW/Fuso) dan administrasi harian.</li>
+        <li>Membangun WMS berbasis web untuk pelacakan stok dan transaksi masuk/keluar real-time.</li>
+      </ul>
+    </details>
+  </article>
+
+  <article class="job">
+    <span class="when">2022 – 2024</span>
+    <h3>Shopee Express</h3><span class="pos">Shift Lead · Admin Tracer · Operator Warehouse</span>
+    <details><summary>Detail</summary>
+      <p class="sub">Shift Lead <span>· Ampek Angkek · 2023–2024</span></p>
+      <ul>
+        <li>Memimpin 22+ staf dalam operasional logistik dan distribusi harian.</li>
+        <li>Menaikkan SLA ketepatan pengiriman dari 85% menjadi 95% lewat optimasi sorting.</li>
+        <li>Menurunkan keterlambatan operasional 20% dengan penanganan masalah proaktif.</li>
+      </ul>
+      <p class="sub">Admin Tracer <span>· Bukittinggi · 2023</span></p>
+      <ul>
+        <li>Mengelola data absensi 50+ staf dengan akurasi tinggi.</li>
+        <li>Mempercepat waktu respons laporan 15% lewat otomasi Google Apps Script.</li>
+        <li>Menjadi penghubung antara manajemen dan tim lapangan.</li>
+      </ul>
+      <p class="sub">Operator Warehouse <span>· Bukittinggi · 2022–2023</span></p>
+      <ul>
+        <li>Menjaga akurasi sorting dan menekan kesalahan pengiriman hingga 10%.</li>
+        <li>Mendukung pengelolaan inventaris dan ketersediaan stok harian.</li>
+      </ul>
+    </details>
+  </article>
+
+  <article class="job">
+    <span class="when">2016 – 2017</span>
+    <h3>Sateri Viscose International</h3><span class="pos">Operator Mesin</span>
+    <details><summary>Detail</summary>
+      <ul><li>Pengecekan rutin mesin produksi untuk meminimalkan downtime.</li></ul>
+    </details>
+  </article>
+</section>
+
+<section id="proyek" class="rv">
+  <p class="eyebrow">Proyek</p><h2>Proyek unggulan</h2>
+  <div class="card">
+    <h3>Warehouse Management System berbasis web</h3>
+    <p>Melacak stok 183+ item spare part FAW/Fuso dan seluruh transaksi masuk/keluar secara real-time di PT Roda Kencana Indonesia, menggantikan pencatatan manual.</p>
+    <div class="flow">Barang masuk <i>→</i> Stok terkini <i>→</i> Barang keluar</div>
+  </div>
+</section>
+
+<section id="keahlian" class="rv">
+  <p class="eyebrow">Keahlian</p><h2>Kemampuan inti</h2>
+  <div class="grp"><h4>Operasional</h4><div class="chips"><span>Warehouse Operations</span><span>Inventory Control</span><span>Sorting & Distribusi</span><span>SLA Management</span><span>Administrasi Operasional</span><span>Koordinasi Lapangan</span></div></div>
+  <div class="grp"><h4>Data & Sistem</h4><div class="chips"><span>WMS</span><span>Google Sheets</span><span>Google Apps Script</span><span>Microsoft Excel</span><span>Microsoft Office</span><span>Google Workspace</span><span>Otomasi Laporan</span></div></div>
+  <div class="grp"><h4>Kepemimpinan</h4><div class="chips"><span>Team Leadership</span><span>Problem Solving</span><span>Penyelesaian Konflik</span><span>Komunikasi Lintas Tim</span></div></div>
+</section>
+
+<section id="kontak" class="rv">
+  <p class="eyebrow">Kontak</p><h2>Mari terhubung</h2>
+  <div class="ct">
+    <a href="mailto:habifebriansyah98@gmail.com"><small>Email</small><span>habifebriansyah98@gmail.com</span></a>
+    <a href="tel:082169296864"><small>Telepon</small><span>082169296864</span></a>
+    <a href="https://linkedin.com/in/habi-febriansyah-9316b7291" target="_blank" rel="noopener"><small>LinkedIn</small><span>habi-febriansyah-9316b7291</span></a>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 Habi Febriansyah</footer>
+
+<script>
+(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+var links=[].slice.call(document.querySelectorAll('nav a')),secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))}),t=false;
+function on(){t=false;var c=-1;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<innerHeight*.4)c=i});links.forEach(function(a,i){a.classList.toggle('on',i===c)})}
+addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(on)}},{passive:true});on();
+})();
+</script>
+</body>
+</html>
